@@ -4,7 +4,7 @@ import (
 	"context"
 	"fmt"
 	"log"
-	"logger/data"
+	"log-service/data"
 	"net/http"
 	"time"
 
@@ -15,7 +15,7 @@ import (
 const (
 	webPort  = "80"
 	rpcPort  = "5001"
-	mongoURL = "mongodb://localhost:27017"
+	mongoURL = "mongodb://mongo:27017"
 	gRpcPort = "50001"
 )
 
@@ -87,5 +87,6 @@ func connectToMongo() (*mongo.Client, error) {
 		return nil, err
 	}
 
+	log.Println("Successfuly connected to mongoDB.")
 	return c, nil
 }
